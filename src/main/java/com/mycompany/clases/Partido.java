@@ -1,84 +1,81 @@
 package com.mycompany.clases;
 
+import com.gm.modelos.*;
+
+/**
+ *
+ * @author ADMIN
+ */
 public class Partido {
 
-    private Equipo equipo1;
-    private Equipo equipo2;
-    private int golesEquipo1;
-    private int golesEquipo2;
+    private Equipo equipo_1;
+    private Equipo equipo_2;
+    private int golesEquipo_1;
+    private int golesEquipo_2;
+
+    public Partido(Equipo equipo_1, Equipo equipo_2, int golesEquipo_1, int golesEquipo_2) {
+        this.equipo_1 = equipo_1;
+        this.equipo_2 = equipo_2;
+        this.golesEquipo_1 = golesEquipo_1;
+        this.golesEquipo_2 = golesEquipo_2;
+    }
 
     public Partido() {
     }
 
+    public Equipo getEquipo_1() {
+        return equipo_1;
+    }
+
+    public void setEquipo_1(Equipo equipo_1) {
+        this.equipo_1 = equipo_1;
+    }
+
     @Override
     public String toString() {
-        return "Partido{" + "equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", golesEquipo1=" + golesEquipo1 + ", golesEquipo2=" + golesEquipo2 + '}';
+        return "Partido{" + "equipo_1=" + equipo_1 + ", equipo_2=" + equipo_2 + ", golesEquipo_1=" + golesEquipo_1 + ", golesEquipo_2=" + golesEquipo_2 + '}';
     }
 
-    public Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
-        this.equipo1 = equipo1;
-        this.equipo2 = equipo2;
-        this.golesEquipo1 = golesEquipo1;
-        this.golesEquipo2 = golesEquipo2;
+    public Equipo getEquipo_2() {
+        return equipo_2;
     }
 
-    public ResultadoEnum resultado(Equipo e) {
+    public void setEquipo_2(Equipo equipo_2) {
+        this.equipo_2 = equipo_2;
+    }
 
-        if (e.equals(equipo1)) {
-            if (getGolesEquipo1() == getGolesEquipo2()) {
-                return ResultadoEnum.Empate;
-            } else {
-                if (getGolesEquipo1() > getGolesEquipo2()) {
-                    return ResultadoEnum.Ganador;
-                } else {
-                    return ResultadoEnum.Perdedor;
-                }
-            }
-        } else if (e.equals(equipo2)) {
-            if (getGolesEquipo2() == getGolesEquipo1()) {
-                return ResultadoEnum.Empate;
-            } else {
-                if (getGolesEquipo2() > getGolesEquipo1()) {
-                    return ResultadoEnum.Ganador;
-                } else {
-                    return ResultadoEnum.Perdedor;
-                }
-            }
-            
+    public int getGolesEquipo_1() {
+        return golesEquipo_1;
+    }
+
+    public void setGolesEquipo_1(int golesEquipo_1) {
+        this.golesEquipo_1 = golesEquipo_1;
+    }
+
+    public int getGolesEquipo_2() {
+        return golesEquipo_2;
+    }
+
+    public void setGolesEquipo_2(int golesEquipo_2) {
+        this.golesEquipo_2 = golesEquipo_2;
+    }
+
+    public String mostrarPartido() {
+
+        return (String.format("%-20s %-15s %-15s %-20s",
+                getEquipo_1().getNombre(), getGolesEquipo_1(), getGolesEquipo_2(), getEquipo_2().getNombre()));
+    }
+
+    public ResultadoEnum resultadoPartido() {
+        if (getGolesEquipo_1() == golesEquipo_2) {
+            return ResultadoEnum.empate;
+        } else if (getGolesEquipo_1() > golesEquipo_2) {
+            return ResultadoEnum.ganaEquipo1;
+        } else {
+            return ResultadoEnum.ganaEquipo2;
         }
-        return null;
     }
 
-    public Equipo getEquipo1() {
-        return equipo1;
-    }
-
-    public void setEquipo1(Equipo equipo1) {
-        this.equipo1 = equipo1;
-    }
-
-    public Equipo getEquipo2() {
-        return equipo2;
-    }
-
-    public void setEquipo2(Equipo equipo2) {
-        this.equipo2 = equipo2;
-    }
-
-    public int getGolesEquipo1() {
-        return golesEquipo1;
-    }
-
-    public void setGolesEquipo1(int golesEquipo1) {
-        this.golesEquipo1 = golesEquipo1;
-    }
-
-    public int getGolesEquipo2() {
-        return golesEquipo2;
-    }
-
-    public void setGolesEquipo2(int golesEquipo2) {
-        this.golesEquipo2 = golesEquipo2;
-    }
-
+    
+    
 }

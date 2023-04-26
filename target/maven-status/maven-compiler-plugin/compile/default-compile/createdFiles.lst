@@ -1,7 +1,10 @@
-com\mycompany\clases\Participante.class
-com\mycompany\clases\Pronostico.class
-com\mycompany\clases\Partido.class
-com\mycompany\clases\Ronda.class
-com\mycompany\clases\Equipo.class
-com\mycompany\clases\ResultadoEnum.class
-com\mycompany\proyectopronostico\ProyectoPronostico.class
+com\gm\principal\App.class
+com\gm\modelos\Equipo.class
+com\gm\modelos\Pronostico.class
+com\gm\modelos\Partido.class
+com\gm\modelos\Ronda.class
+com\gm\pronosticodeportivo\PronosticoDeportivo.class
+com\gm\config\Conexion.class
+com\gm\modelos\Fase.class
+com\gm\modelos\ResultadoEnum.class
+com\gm\modelos\Persona.class
